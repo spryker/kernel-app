@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace SprykerTest\AsyncApi\KernelApp;
+namespace SprykerTest\Zed\KernelApp;
 
 use Codeception\Actor;
 
