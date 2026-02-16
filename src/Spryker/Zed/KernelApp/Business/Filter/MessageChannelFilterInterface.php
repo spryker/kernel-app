@@ -10,9 +10,9 @@ namespace Spryker\Zed\KernelApp\Business\Filter;
 interface MessageChannelFilterInterface
 {
     /**
-     * @param list<string> $messageChannelNames
+     * @param array<string> $messageChannelNames
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function filterMessageChannels(array $messageChannelNames): array;
 }

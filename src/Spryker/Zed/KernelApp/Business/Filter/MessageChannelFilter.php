@@ -35,9 +35,9 @@ class MessageChannelFilter implements MessageChannelFilterInterface
     }
 
     /**
-     * @param list<string> $messageChannelNames
+     * @param array<string> $messageChannelNames
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function filterMessageChannels(array $messageChannelNames): array
     {

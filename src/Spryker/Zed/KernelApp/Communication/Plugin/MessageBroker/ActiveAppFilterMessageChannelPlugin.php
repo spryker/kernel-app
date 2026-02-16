@@ -25,9 +25,9 @@ class ActiveAppFilterMessageChannelPlugin extends AbstractPlugin implements Filt
      *
      * @api
      *
-     * @param list<string> $messageChannelNames
+     * @param array<string> $messageChannelNames
      *
-     * @return list<string>
+     * @return array<string>
      */
     public function filter(array $messageChannelNames): array
     {
