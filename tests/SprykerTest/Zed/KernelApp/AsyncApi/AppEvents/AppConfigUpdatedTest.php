@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerTest\AsyncApi\KernelApp\KernelAppTests\AppEvents;
+namespace SprykerTest\Zed\KernelApp\AsyncApi\AppEvents;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\AppConfigTransfer;
@@ -18,9 +18,9 @@ use SprykerTest\Zed\KernelApp\KernelAppAsyncApiTester;
  * Auto-generated group annotations
  *
  * @group SprykerTest
- * @group AsyncApi
+ * @group Zed
  * @group KernelApp
- * @group KernelAppTests
+ * @group AsyncApi
  * @group AppEvents
  * @group AppConfigUpdatedTest
  * Add your own group annotations below this line

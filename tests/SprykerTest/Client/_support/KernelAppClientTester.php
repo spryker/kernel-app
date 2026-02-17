@@ -7,7 +7,7 @@
 
 declare(strict_types=1);
 
-namespace SprykerTest\Client\KernelApp;
+namespace SprykerTest\Client;
 
 use Codeception\Actor;
 
