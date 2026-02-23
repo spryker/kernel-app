@@ -2,7 +2,7 @@ namespace: SprykerTest\Client\KernelApp
 paths:
     tests: .
     data: ../../../_data
-    support: _support
+    support: KernelApp/_support
     output: ../../../_output
 coverage:
     enabled: true
