@@ -15,11 +15,6 @@ use Spryker\Zed\Kernel\Persistence\AbstractEntityManager;
  */
 class KernelAppEntityManager extends AbstractEntityManager implements KernelAppEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AppConfigTransfer $appConfigTransfer
-     *
-     * @return void
-     */
     public function writeAppConfig(AppConfigTransfer $appConfigTransfer): void
     {
         $appConfigTransfer->getAppIdentifierOrFail();

@@ -22,10 +22,6 @@ class MessageChannelFilter implements MessageChannelFilterInterface
      */
     protected KernelAppConfig $kernelAppConfig;
 
-    /**
-     * @param \Spryker\Zed\KernelApp\Persistence\KernelAppRepositoryInterface $kernelAppRepository
-     * @param \Spryker\Zed\KernelApp\KernelAppConfig $kernelAppConfig
-     */
     public function __construct(
         KernelAppRepositoryInterface $kernelAppRepository,
         kernelAppConfig $kernelAppConfig

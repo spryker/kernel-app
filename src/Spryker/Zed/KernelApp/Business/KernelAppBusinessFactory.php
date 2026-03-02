@@ -21,9 +21,6 @@ use Spryker\Zed\KernelApp\KernelAppDependencyProvider;
  */
 class KernelAppBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\KernelApp\Business\Request\Request
-     */
     public function createRequest(): Request
     {
         return new Request(
@@ -33,17 +30,11 @@ class KernelAppBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\KernelApp\Business\Filter\MessageChannelFilterInterface
-     */
     public function createMessageChannelFilter(): MessageChannelFilterInterface
     {
         return new MessageChannelFilter($this->getRepository(), $this->getConfig());
     }
 
-    /**
-     * @return \Spryker\Client\KernelApp\KernelAppClientInterface
-     */
     public function getKernelAppClient(): KernelAppClientInterface
     {
         return $this->getProvidedDependency(KernelAppDependencyProvider::CLIENT_KERNEL_APP);

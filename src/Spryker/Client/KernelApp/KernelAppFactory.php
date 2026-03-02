@@ -17,9 +17,6 @@ use Spryker\Client\KernelApp\Request\RequestInterface;
  */
 class KernelAppFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\KernelApp\Request\RequestInterface
-     */
     public function createRequest(): RequestInterface
     {
         return new Request(
@@ -37,9 +34,6 @@ class KernelAppFactory extends AbstractFactory
         return $this->getProvidedDependency(KernelAppDependencyProvider::REQUEST_EXPANDER_PLUGINS);
     }
 
-    /**
-     * @return \Spryker\Client\KernelApp\Dependency\External\KernelAppToHttpClientAdapterInterface
-     */
     public function getHttpClient(): KernelAppToHttpClientAdapterInterface
     {
         return $this->getProvidedDependency(KernelAppDependencyProvider::CLIENT_HTTP);

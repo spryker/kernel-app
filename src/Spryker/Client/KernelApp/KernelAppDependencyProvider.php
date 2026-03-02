@@ -27,11 +27,6 @@ class KernelAppDependencyProvider extends AbstractDependencyProvider
      */
     public const REQUEST_EXPANDER_PLUGINS = 'REQUEST_EXPANDER_PLUGINS';
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     public function provideServiceLayerDependencies(Container $container): Container
     {
         $container = $this->addHttpClient($container);
@@ -40,11 +35,6 @@ class KernelAppDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addHttpClient(Container $container): Container
     {
         $container->set(static::CLIENT_HTTP, function () {
@@ -57,11 +47,6 @@ class KernelAppDependencyProvider extends AbstractDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Client\Kernel\Container $container
-     *
-     * @return \Spryker\Client\Kernel\Container
-     */
     protected function addRequestExpanderPlugins(Container $container): Container
     {
         $container->set(static::REQUEST_EXPANDER_PLUGINS, function () {

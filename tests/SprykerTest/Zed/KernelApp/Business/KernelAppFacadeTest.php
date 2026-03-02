@@ -41,9 +41,6 @@ class KernelAppFacadeTest extends Unit
      */
     protected KernelAppBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testRequestIsExpendedWithTenantIdentifierBeforeRequestIsSend(): void
     {
         // Arrange
@@ -69,9 +66,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertInstanceOf(AcpHttpResponseTransfer::class, $acpHttpResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDefaultHeadersAreSetWhenNotPresentInRequest(): void
     {
         // Arrange
@@ -96,9 +90,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertInstanceOf(AcpHttpResponseTransfer::class, $acpHttpResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testDefaultHeadersAreIgnoredWhenPresentInRequest(): void
     {
         // Arrange
@@ -123,9 +114,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertInstanceOf(AcpHttpResponseTransfer::class, $acpHttpResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterMessageChannelsFiltersGivenMessageChannelsWhenAppSpecificMessageChannelsExistAndAppIsActive(): void
     {
         // Arrange
@@ -147,9 +135,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertSame($expectedFilteredMessageChannels, $filteredMessageChannels);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterMessageChannelsDoesNothingWithGivenMessageChannelsWhenAppSpecificMessageChannelsExistButNotForAllAppConfigs(): void
     {
         // Arrange
@@ -171,9 +156,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertSame($messageChannels, $filteredMessageChannels);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterMessageChannelsFiltersGivenMessageChannelsWhenAppIsNotActiveButGracePeriodHasNotBeenExpired(): void
     {
         // Arrange
@@ -200,9 +182,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertSame($expectedFilteredMessageChannels, $filteredMessageChannels);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterMessageChannelsReturnsNoGivenMessageChannelsWhenAppIsNotActiveAndGracePeriodHasAlreadyBeenExpired(): void
     {
         // Arrange
@@ -223,9 +202,6 @@ class KernelAppFacadeTest extends Unit
         $this->assertSame([], $filteredMessageChannels);
     }
 
-    /**
-     * @return void
-     */
     public function testFilterMessageChannelsReturnsNoGivenMessageChannelsWhenThereAreNoAppSpecificMessageChannels(): void
     {
         // Arrange
@@ -239,20 +215,12 @@ class KernelAppFacadeTest extends Unit
         $this->assertSame([], $filteredMessageChannels);
     }
 
-    /**
-     * @param callable $sendCallback
-     *
-     * @return void
-     */
     protected function mockGuzzleClient(callable $sendCallback): void
     {
         $clientMock = Stub::make(Client::class, ['send' => $sendCallback]);
         $this->tester->setDependency(KernelAppDependencyProvider::CLIENT_HTTP, new KernelAppToGuzzleHttpClientAdapter($clientMock));
     }
 
-    /**
-     * @return \Psr\Http\Message\ResponseInterface
-     */
     protected function mockResponse(): ResponseInterface
     {
         return Stub::makeEmpty(ResponseInterface::class, [

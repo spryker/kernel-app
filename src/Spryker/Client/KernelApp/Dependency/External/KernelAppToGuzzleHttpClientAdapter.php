@@ -20,19 +20,11 @@ class KernelAppToGuzzleHttpClientAdapter implements KernelAppToHttpClientAdapter
      */
     protected ClientInterface $httpClient;
 
-    /**
-     * @param \GuzzleHttp\ClientInterface $httpClient
-     */
     public function __construct(ClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AcpHttpRequestTransfer $acpHttpRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\AcpHttpResponseTransfer
-     */
     public function send(AcpHttpRequestTransfer $acpHttpRequestTransfer): AcpHttpResponseTransfer
     {
         $request = new Request(

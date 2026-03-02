@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\AcpHttpResponseTransfer;
 
 interface RequestInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AcpHttpRequestTransfer $acpHttpRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\AcpHttpResponseTransfer
-     */
     public function request(AcpHttpRequestTransfer $acpHttpRequestTransfer): AcpHttpResponseTransfer;
 }

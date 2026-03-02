@@ -87,9 +87,6 @@ class KernelAppClientTest extends Unit
                  */
                 protected string $xMas;
 
-                /**
-                 * @param string $xMas
-                 */
                 public function __construct(string $xMas)
                 {
                     $this->xMas = $xMas;
@@ -114,9 +111,6 @@ class KernelAppClientTest extends Unit
         $this->assertInstanceOf(AcpHttpResponseTransfer::class, $acpHttpResponseTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testRequestIsExpandedWithHeaderFromExpanderPluginBeforeRequestReturnsError(): void
     {
         // Arrange
@@ -159,9 +153,6 @@ class KernelAppClientTest extends Unit
                  */
                 protected string $xMas;
 
-                /**
-                 * @param string $xMas
-                 */
                 public function __construct(string $xMas)
                 {
                     $this->xMas = $xMas;

@@ -20,25 +20,16 @@ use Spryker\Zed\KernelApp\Persistence\Mapper\AppConfigMapper;
  */
 class KernelAppPersistenceFactory extends AbstractPersistenceFactory
 {
-    /**
-     * @return \Orm\Zed\KernelApp\Persistence\SpyAppConfigQuery
-     */
     public function createAppConfigPropelQuery(): SpyAppConfigQuery
     {
         return SpyAppConfigQuery::create();
     }
 
-    /**
-     * @return \Spryker\Zed\KernelApp\Persistence\Mapper\AppConfigMapper
-     */
     public function createAppConfigMapper(): AppConfigMapper
     {
         return new AppConfigMapper($this->getUtilEncodingService());
     }
 
-    /**
-     * @return \Spryker\Zed\KernelApp\Dependency\Service\KernelAppToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): KernelAppToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(KernelAppDependencyProvider::SERVICE_UTIL_ENCODING);

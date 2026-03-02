@@ -21,11 +21,6 @@ class KernelAppHelper extends Module
     use DataCleanupHelperTrait;
     use FactoryHelperTrait;
 
-    /**
-     * @param array $seed
-     *
-     * @return \Generated\Shared\Transfer\AppConfigUpdatedTransfer
-     */
     public function haveAppConfigUpdatedTransfer(array $seed = []): AppConfigUpdatedTransfer
     {
         $appConfigUpdatedTransfer = (new AppConfigUpdatedBuilder($seed))->build();
@@ -33,9 +28,6 @@ class KernelAppHelper extends Module
         return $appConfigUpdatedTransfer;
     }
 
-    /**
-     * @return void
-     */
     public function emptyAppConfigTable(): void
     {
         /** @var \Spryker\Zed\KernelApp\Persistence\KernelAppPersistenceFactory $kernelAppPersistenceFactory */
@@ -44,12 +36,6 @@ class KernelAppHelper extends Module
             ->deleteAll();
     }
 
-    /**
-     * @param array $seed
-     * @param string|null $appConfigUpdatedAt
-     *
-     * @return \Generated\Shared\Transfer\AppConfigTransfer
-     */
     public function haveAppConfigPersisted(array $seed = [], ?string $appConfigUpdatedAt = null): AppConfigTransfer
     {
         $appConfigTransfer = (new AppConfigBuilder($seed))->build();
@@ -73,12 +59,6 @@ class KernelAppHelper extends Module
         return $appConfigTransfer;
     }
 
-    /**
-     * @param string $appIdentifier
-     * @param \Generated\Shared\Transfer\AppConfigTransfer|null $appConfigTransfer
-     *
-     * @return void
-     */
     public function assertAppConfigIsPersisted(string $appIdentifier, ?AppConfigTransfer $appConfigTransfer = null): void
     {
         /** @var \Spryker\Zed\KernelApp\Persistence\KernelAppPersistenceFactory $kernelAppPersistenceFactory */

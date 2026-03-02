@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\AcpHttpResponseTransfer;
 
 interface KernelAppToHttpClientAdapterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AcpHttpRequestTransfer $acpHttpRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\AcpHttpResponseTransfer
-     */
     public function send(AcpHttpRequestTransfer $acpHttpRequestTransfer): AcpHttpResponseTransfer;
 }

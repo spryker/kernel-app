@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\AppConfigTransfer;
 
 interface KernelAppEntityManagerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AppConfigTransfer $appConfigTransfer
-     *
-     * @return void
-     */
     public function writeAppConfig(AppConfigTransfer $appConfigTransfer): void;
 }

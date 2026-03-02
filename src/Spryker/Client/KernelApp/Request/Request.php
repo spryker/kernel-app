@@ -38,11 +38,6 @@ class Request implements RequestInterface
         $this->httpClient = $httpClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AcpHttpRequestTransfer $acpHttpRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\AcpHttpResponseTransfer
-     */
     public function request(AcpHttpRequestTransfer $acpHttpRequestTransfer): AcpHttpResponseTransfer
     {
         $acpHttpRequestTransfer = $this->executeRequestExpanderPlugins($acpHttpRequestTransfer);
@@ -51,11 +46,6 @@ class Request implements RequestInterface
         return $this->httpClient->send($acpHttpRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AcpHttpRequestTransfer $acpHttpRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\AcpHttpRequestTransfer
-     */
     protected function executeRequestExpanderPlugins(AcpHttpRequestTransfer $acpHttpRequestTransfer): AcpHttpRequestTransfer
     {
         foreach ($this->requestExpanderPlugins as $acpRequestExpanderPlugin) {
@@ -65,11 +55,6 @@ class Request implements RequestInterface
         return $acpHttpRequestTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AcpHttpRequestTransfer $acpHttpRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\AcpHttpRequestTransfer
-     */
     protected function expandRequest(AcpHttpRequestTransfer $acpHttpRequestTransfer): AcpHttpRequestTransfer
     {
         foreach ($this->config->getDefaultHeaders() as $headerName => $headerValue) {

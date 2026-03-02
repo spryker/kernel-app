@@ -34,9 +34,6 @@ class AppConfigUpdatedTest extends Unit
      */
     protected KernelAppAsyncApiTester $tester;
 
-    /**
-     * @return void
-     */
     public function testGivenAnAppConfigIsPersistedAndTheMessageChangesTheIsActivePropertyWhenTheAppConfigUpdatedMessageIsHandledThenTheAppConfigIsUpdated(): void
     {
         // Arrange

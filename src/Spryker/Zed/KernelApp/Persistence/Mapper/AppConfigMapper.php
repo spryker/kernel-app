@@ -18,20 +18,11 @@ class AppConfigMapper
      */
     protected KernelAppToUtilEncodingServiceInterface $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\KernelApp\Dependency\Service\KernelAppToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(KernelAppToUtilEncodingServiceInterface $utilEncodingService)
     {
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param \Orm\Zed\KernelApp\Persistence\SpyAppConfig $appConfigEntity
-     * @param \Generated\Shared\Transfer\AppConfigTransfer $appConfigTransfer
-     *
-     * @return \Generated\Shared\Transfer\AppConfigTransfer
-     */
     public function mapAppConfigEntityToAppConfigTransfer(
         SpyAppConfig $appConfigEntity,
         AppConfigTransfer $appConfigTransfer
@@ -44,12 +35,6 @@ class AppConfigMapper
         return $appConfigTransfer->fromArray($appConfigData, true);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AppConfigTransfer $appConfigTransfer
-     * @param \Orm\Zed\KernelApp\Persistence\SpyAppConfig $appConfigEntity
-     *
-     * @return \Orm\Zed\KernelApp\Persistence\SpyAppConfig
-     */
     public function mapAppConfigTransferToAppConfigEntity(
         AppConfigTransfer $appConfigTransfer,
         SpyAppConfig $appConfigEntity

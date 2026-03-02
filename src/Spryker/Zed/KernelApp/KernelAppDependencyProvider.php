@@ -33,11 +33,6 @@ class KernelAppDependencyProvider extends AbstractBundleDependencyProvider
      */
     public const SERVICE_UTIL_ENCODING = 'KERNEL_APP:SERVICE_UTIL_ENCODING';
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function provideBusinessLayerDependencies(Container $container): Container
     {
         $container = parent::provideBusinessLayerDependencies($container);
@@ -47,11 +42,6 @@ class KernelAppDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function providePersistenceLayerDependencies(Container $container): Container
     {
         $container = parent::providePersistenceLayerDependencies($container);
@@ -60,11 +50,6 @@ class KernelAppDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     public function addKernelAppClient(Container $container): Container
     {
         $container->set(static::CLIENT_KERNEL_APP, function (Container $container): KernelAppClientInterface {
@@ -74,11 +59,6 @@ class KernelAppDependencyProvider extends AbstractBundleDependencyProvider
         return $container;
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addRequestExpanderPlugins(Container $container): Container
     {
         $container->set(static::REQUEST_EXPANDER_PLUGINS, function () {
@@ -96,11 +76,6 @@ class KernelAppDependencyProvider extends AbstractBundleDependencyProvider
         return [];
     }
 
-    /**
-     * @param \Spryker\Zed\Kernel\Container $container
-     *
-     * @return \Spryker\Zed\Kernel\Container
-     */
     protected function addUtilEncodingService(Container $container): Container
     {
         $container->set(static::SERVICE_UTIL_ENCODING, function (Container $container): KernelAppToUtilEncodingServiceInterface {
