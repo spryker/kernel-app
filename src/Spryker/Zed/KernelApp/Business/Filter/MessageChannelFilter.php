@@ -24,7 +24,7 @@ class MessageChannelFilter implements MessageChannelFilterInterface
 
     public function __construct(
         KernelAppRepositoryInterface $kernelAppRepository,
-        kernelAppConfig $kernelAppConfig
+        KernelAppConfig $kernelAppConfig
     ) {
         $this->kernelAppRepository = $kernelAppRepository;
         $this->kernelAppConfig = $kernelAppConfig;
